@@ -4,14 +4,17 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <form
-      className="w-screen h-screen flex items-center justify-center"
-      action={async () => {
-        "use server";
-        await signIn("cognito", { redirect: true, redirectTo: "/dashboard" });
-      }}
-    >
-      <Button> Signin</Button>
-    </form>
+    <div>
+      {" "}
+      <form
+        className="w-screen h-screen flex items-center justify-center"
+        action={async () => {
+          "use server";
+          await signIn("cognito", { redirect: true, redirectTo: "/dashboard" });
+        }}
+      >
+        <Button> Signin</Button>
+      </form>
+    </div>
   );
 }
