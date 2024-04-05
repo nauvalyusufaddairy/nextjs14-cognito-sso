@@ -11,17 +11,24 @@ export const {
   session: { strategy: "jwt" },
   providers: [
     Credentials({
-      id: "1",
-      name: "credential1",
-      credentials: {
-        username: {
-          type: "text",
-        },
-        password: {
-          type: "password",
-        },
-      },
-      async authorize(Credentials) {
+      //   id: "1",
+      //   name: "credential1",
+      //   credentials: {
+      //     username: {
+      //       type: "text",
+      //     },
+      //     password: {
+      //       type: "password",
+      //     },
+      //   },
+      async authorize(credentials) {
+        const user = { id: "1", username: "1", password: "test" };
+        if (
+          user.password === credentials.password &&
+          user.username === credentials.username
+        ) {
+          return user;
+        }
         return null;
       },
     }),
