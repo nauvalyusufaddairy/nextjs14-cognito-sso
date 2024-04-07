@@ -7,6 +7,7 @@ export default function Home() {
     <Button
       onClick={() =>
         signIn("google", {
+          redirect: true,
           callbackUrl: "/dashboard",
         })
       }
