@@ -12,7 +12,5 @@ export const {
   auth,
 } = NextAuth({
   session: { strategy: "jwt" },
-  // @ts-ignore
-  adapter: PrismaAdapter(prisma as any),
   ...authConfig,
 });
