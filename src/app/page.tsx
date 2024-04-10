@@ -1,18 +1,17 @@
 "use client";
-import { Button } from "@/components/ui/button";
 import { signIn } from "next-auth/react";
+import { Button } from "@/components/ui/button";
 
-export default function Home() {
+export default async function Home() {
   return (
-    <Button
-      onClick={() =>
-        signIn("google", {
-          redirect: true,
-          callbackUrl: "/dashboard",
-        })
-      }
-    >
-      signin
-    </Button>
+    <div>
+      <Button
+        onClick={() =>
+          signIn("google", { redirect: true, callbackUrl: "/private" })
+        }
+      >
+        add
+      </Button>
+    </div>
   );
 }
